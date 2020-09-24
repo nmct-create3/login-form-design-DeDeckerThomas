@@ -46,7 +46,8 @@
   --global-whitespace-xl: calc(var(--global-whitespace) * 2); /* = 48px */
   --global-whitespace-xxl: calc(var(--global-whitespace-lg) * 2); /* = 64px */
 
-  --global-border-width: 1px;
+  --global-borderWidth: 1px;
+  --global-borderRadius: 3px;
 }
 
 /*------------------------------------*\
@@ -509,9 +510,9 @@ label {
 
 .c-card {
   background-color: white;
-  border: var(--global-border-width) solid rgba(0, 0, 0, 0.05);
+  border: var(--global-borderWidth) solid rgba(0, 0, 0, 0.05);
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.07);
-  border-radius: 3px;
+  border-radius: var(--global-borderRadius);
 }
 
 .c-card__body {
@@ -535,7 +536,7 @@ label {
   font-size: 14px;
   line-height: var(--global-whitespace-md);
   padding: var(--global-whitespace);
-  border-top: var(--global-border-width) solid var(--global-color-neutral-xxx-light);
+  border-top: var(--global-borderWidth) solid var(--global-color-neutral-xxx-light);
 }
 
 @media (min-width: 576px) {
@@ -570,13 +571,13 @@ label {
   -moz-appearance: none;
   appearance: none;
   width: 100%;
-  border: var(--global-border-width) solid var(--global-color-neutral-xxx-light);
-  border-radius: 3px;
+  border: var(--global-borderWidth) solid var(--global-color-neutral-xxx-light);
+  border-radius: var(--global-borderRadius);
   font-family: inherit;
   color: var(--global-color-neutral-xxxx-dark);
   font-size: 16px;
   line-height: calc(var(--global-baseline) * 3);
-  padding: calc(12px - var(--global-border-width)) calc(16px - var(--global-border-width));
+  padding: calc((1.5 * var(--global-baseline)) - var(--global-borderWidth)) calc((2 * var(--global-baseline)) - var(--global-borderWidth));
   outline: none;
 }
 
@@ -616,14 +617,14 @@ label {
 
 .c-button {
   background-color: var(--global-color-alpha);
-  border: var(--global-border-width) solid var(--global-color-alpha-dark);
-  border-radius: 3px;
+  border: var(--global-borderWidth) solid var(--global-color-alpha-dark);
+  border-radius: var(--global-borderRadius);
   font-family: inherit;
   font-weight: 600;
   font-size: 16px;
   line-height: calc(var(--global-baseline) * 3);
   color: white;
-  padding: calc(12px - var(--global-border-width));
+  padding: calc(1.5 * var(--global-baseline) - var(--global-borderWidth));
   width: 100%;
   outline: none;
 }
@@ -1013,7 +1014,7 @@ No media query since this is the default in mobile first design
   }
   pre,
   blockquote {
-    border: var(--global-border-width) solid #999;
+    border: var(--global-borderWidth) solid #999;
     page-break-inside: avoid;
   }
   /*
